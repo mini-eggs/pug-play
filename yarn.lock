@@ -636,9 +636,9 @@ babylon@^6.11.0, babylon@^6.15.0:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.15.0.tgz#ba65cfa1a80e1759b0e89fb562e27dccae70348e"
 
-background-image-fade-in@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/background-image-fade-in/-/background-image-fade-in-0.3.4.tgz#ad6e82daddf25047dec8283f9b83be5dcbce7ef9"
+background-image-fade-in@^0.4.21:
+  version "0.4.21"
+  resolved "https://registry.yarnpkg.com/background-image-fade-in/-/background-image-fade-in-0.4.21.tgz#686defee40527bd93ad6e52765d0ffffdfbe1023"
   dependencies:
     add-px-to-style "^1.0.0"
     hyphenate-style-name "^1.0.2"
