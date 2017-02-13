@@ -1,0 +1,27 @@
+header {
+
+  &.scroll__header {
+    margin-top: 0;
+    transform: translate3d(0, -100%, 0);
+    position: fixed;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    margin-left: -300px;
+    animation-duration: 400ms;
+    animation-fill-mode: both;
+
+    @media (max-width: 615px) {
+      margin-left: auto;
+      left: 0;
+    }
+  }
+
+  &.scroll__header__active {
+    animation-name: slideDown;
+  }
+
+  &.scroll__header__inactive {
+    animation-name: slideUp;
+  }
+}

@@ -1,0 +1,6 @@
+article
+  ul
+    each post in posts
+      li
+        a(href='/post/' + post.slug) !{post.name}
+        
