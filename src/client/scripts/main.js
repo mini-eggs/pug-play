@@ -3,7 +3,7 @@ require('./headerTransitions')
 
 // fade in images
 var backgroundImage = require('background-image-fade-in')
-backgroundImage('.featured__image', 1500, { 
+backgroundImage('.featured__image', 250, { 
    backgroundPosition: 'center center',
    backgroundSize: 'cover'
  }, { 
