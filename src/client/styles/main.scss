@@ -27,18 +27,12 @@ html {
     line-height: 140%;
     background-color: transparent;
     margin-bottom: 50px;  
-    animation-duration: 500ms;
-    animation-fill-mode: both;
-    animation-name: fadePageIn;
 
     @media (max-width: $mobile) {
       margin-bottom: 0;
     }
 
     article {
-      animation-duration: 250ms;
-      animation-fill-mode: both;
-      // animation-name: articleSlide;
       color: #fff;
       white-space: pre-wrap;
       margin: 0 auto;

@@ -1,1 +1,188 @@
-@import url(https://fonts.googleapis.com/css?family=Kalam|Droid+Sans+Mono);a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}header.scroll__header{display:none;margin-top:0;transform:translate3d(0,-100%,0);position:fixed;width:100vw;left:50%;top:0;margin-left:-300px;animation-duration:.4s;animation-fill-mode:both}@media (max-width:615px){header.scroll__header{margin-left:auto;left:0}}header.scroll__header__active{display:block;animation-name:slideDown}header.scroll__header__inactive{display:block;animation-name:slideUp}@keyframes slideDown{0%{transform:translate3d(0,-100%,0)}to{transform:translateZ(0)}}@keyframes slideUp{0%{transform:translateZ(0)}to{transform:translate3d(0,-100%,0)}}@keyframes articleSlide{0%{opacity:.75;transform:translate3d(0,-25px,0)}to{opacity:1;transform:translateZ(0)}}@keyframes fadePageIn{0%{opacity:.5}to{opacity:1}}html{background:-webkit-gradient(linear,left top,right bottom,color-stop(0,teal),color-stop(100%,#365480));background:-webkit-linear-gradient(120deg,#365480,teal);background:linear-gradient(330deg,#365480,teal);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#008080",endColorstr="#365480",GradientType=0);overflow-y:scroll;min-height:100vh;text-rendering:optimizeLegibility}html a{text-decoration:none}html body{margin:0;font-family:Droid Sans Mono,sans-serif;font-size:90%;line-height:140%;background-color:transparent;margin-bottom:50px;animation-duration:.5s;animation-fill-mode:both;animation-name:fadePageIn}@media (max-width:650px){html body{margin-bottom:0}}html body article{animation-duration:.25s;animation-fill-mode:both;color:#fff;white-space:pre-wrap;margin:0 auto;max-width:570px;padding:15px;background-color:hsla(0,0%,100%,.2);position:relative;z-index:1}@media (max-width:650px){html body article{padding-bottom:50px}}html body article .featured__image{height:25vh;margin:-15px -15px 15px}html body article .featured__image .fearuted__title{font-family:Kalam,sans-serif;margin:0;position:absolute;top:50%;left:50%;font-size:32px;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);line-height:32px;text-align:center;width:90%}html body article section{overflow:hidden}html body article ul li{padding-bottom:10px}html body article ul li:last-child{padding-bottom:0}@media (max-width:650px){html body article ul li:last-child{margin-bottom:-30px}}html body article a{color:#fff}html body article a:hover{color:#ccc}html body article h1{font-size:150%;margin-bottom:15px}html body header{margin:15px auto 0;max-width:600px;background-color:#333;overflow:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;position:relative;z-index:9}@media (max-width:650px){html body header{margin-top:0}}html body header nav ul li{display:inline-block}html body header nav ul li a{color:#fff;display:block;padding:15px}html body header nav ul li a.active,html body header nav ul li a:hover{background-color:#000}
+@import url(https://fonts.googleapis.com/css?family=Kalam|Droid+Sans+Mono);/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}header.scroll__header {
+  display: none;
+  margin-top: 0;
+  transform: translate3d(0, -100%, 0);
+  position: fixed;
+  width: 100vw;
+  left: 50%;
+  top: 0;
+  margin-left: -300px;
+  animation-duration: 400ms;
+  animation-fill-mode: both; }
+  @media (max-width: 615px) {
+    header.scroll__header {
+      margin-left: auto;
+      left: 0; } }
+
+header.scroll__header__active {
+  display: block;
+  animation-name: slideDown; }
+
+header.scroll__header__inactive {
+  display: block;
+  animation-name: slideUp; }
+
+@keyframes slideDown {
+  from {
+    transform: translate3d(0, -100%, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    transform: translate3d(0, -100%, 0); } }
+
+@keyframes articleSlide {
+  from {
+    opacity: 0.75;
+    transform: translate3d(0, -25px, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadePageIn {
+  from {
+    opacity: 0.5; }
+  to {
+    opacity: 1; } }
+
+html {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0, teal), color-stop(100%, #365480));
+  background: -webkit-linear-gradient(120deg, #365480, teal);
+  background: linear-gradient(330deg, #365480, teal);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008080',endColorstr='#365480',GradientType=0);
+  overflow-y: scroll;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility; }
+  html a {
+    text-decoration: none; }
+  html body {
+    margin: 0;
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-size: 90%;
+    line-height: 140%;
+    background-color: transparent;
+    margin-bottom: 50px;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    animation-name: fadePageIn; }
+    @media (max-width: 650px) {
+      html body {
+        margin-bottom: 0; } }
+    html body article {
+      animation-duration: 250ms;
+      animation-fill-mode: both;
+      color: #fff;
+      white-space: pre-wrap;
+      margin: 0 auto;
+      max-width: 570px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 1; }
+      @media (max-width: 650px) {
+        html body article {
+          padding-bottom: 50px; } }
+      html body article .featured__image {
+        height: 25vh;
+        margin: -15px -15px 15px; }
+        html body article .featured__image .fearuted__title {
+          font-family: 'Kalam', sans-serif;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 32px;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          line-height: 32px;
+          text-align: center;
+          width: 90%; }
+      html body article section {
+        overflow: hidden; }
+      html body article ul li {
+        padding-bottom: 10px; }
+        html body article ul li:last-child {
+          padding-bottom: 0; }
+          @media (max-width: 650px) {
+            html body article ul li:last-child {
+              margin-bottom: -30px; } }
+      html body article a {
+        color: #fff; }
+        html body article a:hover {
+          color: #ccc; }
+      html body article h1 {
+        font-size: 150%;
+        margin-bottom: 15px; }
+    html body header {
+      margin: 15px auto 0;
+      max-width: 600px;
+      background-color: #333;
+      overflow: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      z-index: 9; }
+      @media (max-width: 650px) {
+        html body header {
+          margin-top: 0; } }
+      html body header nav ul li {
+        display: inline-block; }
+        html body header nav ul li a {
+          color: #fff;
+          display: block;
+          padding: 15px 15px 15px 15px; }
+          html body header nav ul li a:hover, html body header nav ul li a.active {
+            background-color: #000; }

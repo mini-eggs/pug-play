@@ -15,23 +15,3 @@
     transform: translate3d(0, -100%, 0);
   }
 }
-
-@keyframes articleSlide {
-  from {
-    opacity: 0.75;
-    transform: translate3d(0, -25px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadePageIn {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-}
