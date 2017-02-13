@@ -807,7 +807,7 @@ __webpack_require__(37)
 
 // fade in images
 var backgroundImage = __webpack_require__(14)
-backgroundImage('.featured__image', 1000, { 
+backgroundImage('.featured__image', 250, { 
    backgroundPosition: 'center center',
    backgroundSize: 'cover'
  }, { 
