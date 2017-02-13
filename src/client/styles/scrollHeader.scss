@@ -1,6 +1,7 @@
 header {
 
   &.scroll__header {
+    display: none;
     margin-top: 0;
     transform: translate3d(0, -100%, 0);
     position: fixed;
@@ -18,10 +19,12 @@ header {
   }
 
   &.scroll__header__active {
+    display: block;
     animation-name: slideDown;
   }
 
   &.scroll__header__inactive {
+    display: block;
     animation-name: slideUp;
   }
 }
