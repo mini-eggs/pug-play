@@ -7,20 +7,8 @@ var router = require('./router')
 var app = express()
 app.server = http.createServer(app)
 
-// set CORS
-app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", process.env.PORT ? 'https://pug-play.herokuapp.com' : 'http://localhost:8080')
-  next()
-})
-
 // secure it
 app.use(helmet())
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: [ "'self'", 'i.imgur.com', 'evanjones.xyz', 'fonts.gstatic.com' ],
-    styleSrc: [ "'self'", "'unsafe-inline'", 'fonts.googleapis.com' ]
-  }
-}))
 
 // app.use('/fonts', express.static(path.join(__dirname, '../../public/fonts')))
 app.use('/scripts', express.static(path.join(__dirname, '../../public/scripts')))
