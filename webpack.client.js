@@ -1,12 +1,12 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
-var CompressionPlugin = require("compression-webpack-plugin")
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 var extractSass = new ExtractTextPlugin({
-  filename: path.join('../', "styles") + "/bundle.css",
+  filename: path.join('../', 'styles') + '/bundle.css',
   disable: false
-})
+});
 
 module.exports = {
   entry: [
@@ -24,10 +24,7 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname, 'src', 'server'),
         query: {
-          presets: [
-            'es2015',
-            'stage-3'
-          ]
+          presets: ['es2015', 'stage-3']
         }
       },
       {
@@ -35,21 +32,19 @@ module.exports = {
         loader: extractSass.extract({
           loader: [
             {
-              loader: "css-loader"
+              loader: 'css-loader'
             },
             {
-              loader: "sass-loader"
+              loader: 'sass-loader'
             }
           ],
-          fallbackLoader: "style-loader"
+          fallbackLoader: 'style-loader'
         })
       }
     ]
   },
-  plugins: [
-    extractSass
-  ]
-}
+  plugins: [extractSass]
+};
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
@@ -68,8 +63,8 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     }),
     new CompressionPlugin({
-      asset: "[path].gz[query]",
+      asset: '[path].gz[query]',
       verbose_more: true
     })
-  ])
+  ]);
 }

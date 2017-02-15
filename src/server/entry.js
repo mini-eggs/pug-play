@@ -3,19 +3,19 @@ import Path from 'path';
 import Express from 'express';
 import Emoji from 'node-emoji';
 import Router from './router';
-import ContentfulData from './data/contentful'
+import ContentfulData from './data/contentful';
 
 const app = Express();
 app.server = Http.createServer(app);
 
-app.use('/scripts', Express.static( Path.join(__dirname, '/client', 'scripts')))
-app.use('/styles', Express.static( Path.join(__dirname, '/client', 'styles')))
+app.use('/scripts', Express.static(Path.join(__dirname, '/client', 'scripts')));
+app.use('/styles', Express.static(Path.join(__dirname, '/client', 'styles')));
 
 app.all('*', (req, res, next) => {
   const earth = Emoji.emoji.earth_americas;
-  console.log(`${earth}  ${req.originalUrl}`)
-  next()
-})
+  console.log(`${earth}  ${req.originalUrl}`);
+  next();
+});
 
 Router(app);
 

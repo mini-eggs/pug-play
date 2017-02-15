@@ -17,7 +17,7 @@ module.exports = {
     process: false,
     Buffer: false,
     __filename: false,
-    __dirname: false,
+    __dirname: false
   },
   module: {
     rules: [
@@ -26,10 +26,7 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname, 'src', 'server'),
         query: {
-          presets: [
-            'es2015', 
-            'stage-3'
-          ]
+          presets: ['es2015', 'stage-3']
         }
       }
     ]

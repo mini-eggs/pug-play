@@ -3,9 +3,8 @@ import Credentials from '../keys/contentful.js';
 const client = Contentful.createClient(Credentials);
 
 export default () => {
-  return new Promise( async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
-
       const data = await client.getEntries();
       let links = [];
       let pages = [];
@@ -46,9 +45,9 @@ export default () => {
         links: fixedLinks,
         pages: pages,
         posts: posts
-      })
+      });
     } catch (err) {
-      reject(err)
+      reject(err);
     }
-  })
+  });
 };

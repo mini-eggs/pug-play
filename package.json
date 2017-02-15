@@ -25,6 +25,7 @@
     "node-emoji": "^1.5.1",
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
+    "prettier": "^0.17.1",
     "pug": "^2.0.0-beta11",
     "rxjs": "^5.1.0",
     "sass-loader": "^5.0.1",
@@ -32,9 +33,11 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "build": "concurrently --kill-others \"npm run webpack-client-build\" \"npm run webpack-server-build\" ",
+    "build": "npm run webpack-client-build && npm run webpack-server-build",
     "start": "node dist/",
     "dev": "concurrently --kill-others \"nodemon dist/\" \"npm run webpack-client-dev\" \"npm run webpack-server-dev\" ",
+    "clean": "rm -rf dist",
+    "prettier": "prettier --write './src/**/*.js' --single-quote",
     "webpack-client-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --watch --config webpack.client.js",
     "webpack-client-build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.client.js",
     "webpack-server-dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --watch --config webpack.server.js",
