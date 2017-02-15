@@ -9,26 +9,42 @@ var extractSass = new ExtractTextPlugin({
 })
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'client') + '/entry.js',
+  entry: [
+    'babel-polyfill',
+    path.join(__dirname, 'src', 'client') + '/entry.js'
+  ],
   output: {
-    path: path.join(__dirname, 'public', 'scripts'),
+    path: path.join(__dirname, 'dist', 'client', 'scripts'),
     filename: 'bundle.js'
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      loader: extractSass.extract({
-        loader: [
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "sass-loader"
-          }
-        ],
-        fallbackLoader: "style-loader"
-      })
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: path.join(__dirname, 'src', 'server'),
+        query: {
+          presets: [
+            'es2015',
+            'stage-3'
+          ]
+        }
+      },
+      {
+        test: /\.scss$/,
+        loader: extractSass.extract({
+          loader: [
+            {
+              loader: "css-loader"
+            },
+            {
+              loader: "sass-loader"
+            }
+          ],
+          fallbackLoader: "style-loader"
+        })
+      }
+    ]
   },
   plugins: [
     extractSass

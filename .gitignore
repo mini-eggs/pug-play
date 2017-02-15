@@ -1,4 +1,4 @@
-src/keys/contentful.dev.js
+src/shared/keys/contentful.dev.js
 .DS_Store
 node_modules/
 dist/

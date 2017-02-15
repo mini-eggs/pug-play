@@ -1,28 +1,27 @@
-var fs = require('fs')
-var page = require('../pages/page')
-var post = require('../pages/post')
-var blog = require('../pages/blog')
+import Path from 'path';
+import Fs from 'fs';
+import Template from './base/base'
+import ContentfulData from './data/contentful'
 
-module.exports = function(app) {
-
-  app.get('/', function(request, response) {
-    response.redirect('/page/home')
-  })
-
-  app.get('/page/:page', function(request, response) {
-    page(request, response)
-  })
-
-  app.get('/blog', function(request, response) {
-    blog(request, response)
-  })
-
-  app.get('/post/:post', function(request, response) {
-    post(request, response)
-  })
-
-  app.get('*', function(request, response) {
-    response.redirect('/page/home')
-  })
-
+const getTemplate = data => {
+  let template = Template
+  template = template.replace('{{TITLE}}', 'Woah!')
+  template = template.replace('{{SSR}}', JSON.stringify(data))
+  return template
 }
+
+const errorHandler = (err, req, res) => {
+  console.log(err)
+  res.send('Error')
+}
+
+export default (app, data) => {
+  app.get('/', async (req, res) => {
+    try {
+      res.send(getTemplate( await ContentfulData() ));
+    }
+    catch(err) {
+      errorHandler(err, req, res)
+    }
+  });
+};
