@@ -1,7 +1,7 @@
 {
-  "name": "pug-play",
-  "version": "1.1.0",
-  "main": "dist/server/index.js",
+  "name": "universal-javascript-boilerplate",
+  "version": "1.2.0",
+  "main": "dist/index.js",
   "author": "Evan M Jones <evanjones4040@gmail.com> (https://evansapps.com/)",
   "license": "MIT",
   "engines": {
