@@ -1,11 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
 
+console.log( __dirname )
+
 module.exports = {
   target: 'node',
   entry: [
     'babel-polyfill',
-    path.join(__dirname, 'src', 'server') + '/entry.js'
+    path.join(__dirname, 'server') + '/entry.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -23,11 +25,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: path.join(__dirname, 'src', 'server'),
-        query: {
-          presets: ['es2015', 'stage-3']
-        }
+        loader: 'babel-loader'
       }
     ]
   },

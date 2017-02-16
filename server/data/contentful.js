@@ -1,4 +1,5 @@
 import Contentful from 'contentful';
+import * as ActionTypes from '../../shared/actions/actions';
 import Credentials from '../keys/contentful.js';
 const client = Contentful.createClient(Credentials);
 
@@ -42,9 +43,7 @@ export default () => {
       });
 
       resolve({
-        links: fixedLinks,
-        pages: pages,
-        posts: posts
+        contentfulReducer: { links: fixedLinks, pages: pages, posts: posts }
       });
     } catch (err) {
       reject(err);

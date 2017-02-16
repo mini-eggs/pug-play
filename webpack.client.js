@@ -4,14 +4,14 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 
 var extractSass = new ExtractTextPlugin({
-  filename: path.join('../', 'styles') + '/bundle.css',
+  filename: path.join('../styles') + '/bundle.css',
   disable: false
 });
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    path.join(__dirname, 'src', 'client') + '/entry.js'
+    path.join(__dirname, 'client') + '/entry.js'
   ],
   output: {
     path: path.join(__dirname, 'dist', 'client', 'scripts'),
@@ -21,11 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: path.join(__dirname, 'src', 'server'),
-        query: {
-          presets: ['es2015', 'stage-3']
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
