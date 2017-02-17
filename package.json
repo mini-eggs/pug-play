@@ -39,9 +39,8 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "start": "npm run build && npm run run",
     "build": "npm run webpack-client-build && npm run webpack-server-build",
-    "run": "node dist/",
+    "start": "node dist/",
     "dev": "concurrently --kill-others \"nodemon dist/\" \"npm run webpack-client-dev\" \"npm run webpack-server-dev\" ",
     "clean": "rm -rf dist",
     "prettier": "prettier --write './client/**/*.js' './server/**/*.js' './shared/**/*.js' --single-quote",
