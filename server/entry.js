@@ -11,7 +11,7 @@ app.use('/scripts', Express.static(Path.join(__dirname, '/client', 'scripts')));
 app.use('/styles', Express.static(Path.join(__dirname, '/client', 'styles')));
 
 app.all('*', (req, res, next) => {
-  console.log(`==> 🌎  ${req.originalUrl}`);
+  // console.log(`==> 🌎  ${req.originalUrl}`);
   next();
 });
 
@@ -19,6 +19,9 @@ Router(app);
 
 app.server.listen(process.env.PORT || 8080, error => {
   const port = app.server.address().port;
+
+  console.log( process.env )
+
   if (error) {
     console.error(error);
   } else {
