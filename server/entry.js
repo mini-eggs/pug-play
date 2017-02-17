@@ -4,16 +4,15 @@ import Express from 'express';
 import Router from './router';
 import ContentfulData from './data/contentful';
 
+if(process.env.PORT) {
+  process.env.NODE_ENV = 'production'
+}
+
 const app = Express();
 app.server = Http.createServer(app);
 
 app.use('/scripts', Express.static(Path.join(__dirname, '/client', 'scripts')));
 app.use('/styles', Express.static(Path.join(__dirname, '/client', 'styles')));
-
-app.all('*', (req, res, next) => {
-  // console.log(`==> 🌎  ${req.originalUrl}`);
-  next();
-});
 
 Router(app);
 
