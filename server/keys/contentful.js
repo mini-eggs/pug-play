@@ -1,17 +1,4 @@
-import DevCredentials from './contentful.dev.js';
-
-let space;
-let accessToken;
-
-if (process.env.SPACE && process.env.ACCESS_TOKEN) {
-  space = process.env.SPACE;
-  accessToken = process.env.accessToken;
-} else {
-  space = DevCredentials.space;
-  accessToken = DevCredentials.accessToken;
-}
-
 export default {
-  space: space,
-  accessToken: accessToken
+  space: '7xm8xiqlci5y',
+  accessToken: '2bbcc752d9de34bedbb82d139af1ad5edbbb3ac797ca0fe34ee2b90b8dffc8fe'
 };

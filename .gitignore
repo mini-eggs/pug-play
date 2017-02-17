@@ -1,4 +1,3 @@
-src/shared/keys/contentful.dev.js
 .DS_Store
 node_modules/
 npm-debug.log
