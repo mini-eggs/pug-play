@@ -6,12 +6,16 @@ import {
   IndexRedirect,
   IndexRoute
 } from 'react-router';
-import App from '../components/app';
+import Item from '../containers/item'
+import Blogs from '../containers/blogs'
+import Container from '../containers/container'
 
 export const routes = (
   <Router history={browserHistory}>
-    <Route path="/">
-      <IndexRoute component={App} />
+    <Route path="/" component={Container} >
+      <IndexRedirect to="/home" />
+      <Route path="/blog" component={Blogs} />
+      <Route path="/:item" component={Item} />
     </Route>
     <Route path="*">
       <IndexRedirect to="/" />
@@ -20,8 +24,5 @@ export const routes = (
 );
 
 export default props => {
-  console.log('here');
-  console.log(props);
-
   return routes;
 };

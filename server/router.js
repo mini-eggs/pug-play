@@ -3,7 +3,6 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
 import Template from './base/base';
-import Application from '../shared/containers/initial';
 import { routes } from '../shared/routes/routes';
 import configureStore from '../shared/store/store';
 import ContentfulData from './data/contentful';

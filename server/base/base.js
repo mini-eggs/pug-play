@@ -1,8 +1,12 @@
 export default `
-  <!doctype html>
-  <html>
+  <!DOCTYPE html>
+  <html lang="en">
     <head>
-      <title>Woah!</title>
+      <meta charset="utf-8">
+      <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="icon" href="http://evanjones.xyz/evansapps.ico?v=1.0.0">
+      <title>Evan Jones</title>
       <link href="/styles/bundle.css" rel="stylesheet" />
     </head>
     <body>
